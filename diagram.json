@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "author": "ASANKA",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -168.1, "left": 244.6, "attrs": {} },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -418.4,
+      "left": -26.58,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -405.2,
+      "left": -368.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -224,
+      "left": 543.2,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": 227.6,
+      "left": 31.6,
+      "rotate": 180,
+      "attrs": {}
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -349.2, "left": 359, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -51.6,
+      "left": 426.2,
+      "attrs": { "color": "limegreen" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "pir1:GND", "esp:GND.2", "black", [ "v19.2", "h-0.26", "v288.1" ] ],
+    [ "pir1:VCC", "esp:VIN", "red", [ "v230.4", "h115.2", "v134.4" ] ],
+    [ "servo1:GND", "esp:GND.1", "black", [ "h28.8", "v-240" ] ],
+    [ "servo1:V+", "esp:VIN", "red", [ "h9.6", "v-134.5", "h-182.4", "v-86.4" ] ],
+    [ "lcd1:GND", "esp:GND.1", "black", [ "h-153.6", "v172.8" ] ],
+    [ "lcd1:VCC", "esp:VIN", "red", [ "h-326.4", "v48.1" ] ],
+    [ "lcd1:SCL", "esp:D22", "cyan", [ "h-28.8", "v38.7" ] ],
+    [ "lcd1:SDA", "esp:D21", "cyan", [ "h-172.8", "v67.4" ] ],
+    [ "keypad1:R1", "esp:D12", "green", [ "v76.8", "h480", "v-48" ] ],
+    [ "keypad1:R2", "esp:D13", "green", [ "v67.2", "h489.2", "v-28.8" ] ],
+    [ "keypad1:R3", "esp:D14", "green", [ "v38.4", "h450.9", "v-19.2" ] ],
+    [ "keypad1:C1", "esp:D32", "green", [ "v115.2", "h460.7", "v-144" ] ],
+    [ "keypad1:C3", "esp:D25", "green", [ "v96", "h451.05", "v-105.6" ] ],
+    [ "keypad1:C4", "esp:D26", "green", [ "v0" ] ],
+    [ "pir1:OUT", "esp:D33", "white", [ "v0" ] ],
+    [ "keypad1:C2", "esp:D18", "green", [ "v153.6", "h595.2", "v-172.8" ] ],
+    [ "esp:D19", "keypad1:R4", "green", [ "h47.7", "v211.1", "h-307.2" ] ],
+    [ "servo1:PWM", "esp:D27", "magenta", [ "h-9.6", "v-336.2" ] ],
+    [ "led1:C", "esp:GND.1", "black", [ "v0" ] ],
+    [ "led1:A", "esp:D4", "yellow", [ "v0" ] ],
+    [ "esp:GND.1", "led2:C", "black", [ "h38.1", "v38.3", "h38.4" ] ],
+    [ "esp:D5", "led2:A", "green", [ "h134.1", "v96" ] ]
+  ],
+  "dependencies": {}
+}
