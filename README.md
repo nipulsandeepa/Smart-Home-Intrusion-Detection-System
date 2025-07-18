@@ -111,9 +111,3 @@ A smart security system built using **ESP32**, **Firebase**, **Blynk IoT**, and 
 
 ---
 
-## 📄 License
-
-This project is for educational purposes. Feel free to modify and extend.
-
----
-
